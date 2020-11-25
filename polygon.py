@@ -5,11 +5,8 @@
 # Results are displayed with two decimal places.                                           # 
 ############################################################################################
 
-#Call library
-import math
-
 #Request number of points
-polypts = int(input("Enter the number of polygon points: "))
+n = int(input("Enter the number of polygon points: "))
 
 #Lists that stores all coordinates - empty to start with
 x = []
@@ -17,7 +14,7 @@ y = []
 
 #Request coordinates
 print("Enter the coordinates...")
-for i in range(polypts):
+for i in range(n):
     xi = float(input(f"x[{i+1}] "))
     x.append(xi)
     yi = float(input(f"y[{i+1}] "))
@@ -27,7 +24,7 @@ for i in range(polypts):
 print()
 print(f"{'Point':>5} {'x':>10} {'y':>10}")
 print("-" *43)
-for i in range(polypts):
+for i in range(n):
     print(f"{i+1:<5} {x[i]:>10.2f} {y[i]:>10.2f}") 
 
 #Define the polygon geometry variables
@@ -39,7 +36,7 @@ Iy = 0
 Ixy = 0
 
 #Calculate the polygon geometry
-for i in range(polypts - 1):
+for i in range(n - 1):
     Ax = Ax + (x[i+1] + x[i]) * (y[i+1] - y[i]) #Area
     Sx = Sx + (x[i+1] - x[i]) * (y[i+1]**2 + y[i]*y[i+1]+ y[i]**2) #Moment of area x
     Sy = Sy + (y[i+1] - y[i]) * (x[i+1]**2 + x[i]*y[i+1]+ x[i]**2) #Moment of area y
