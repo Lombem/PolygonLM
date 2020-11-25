@@ -37,11 +37,11 @@ Ixy = 0
 
 #Calculate the polygon geometry
 for i in range(n - 1):
-    Ax = Ax + (x[i+1] + x[i]) * (y[i+1] - y[i]) #Area
-    Sx = Sx + (x[i+1] - x[i]) * (y[i+1]**2 + y[i]*y[i+1]+ y[i]**2) #Moment of area x
-    Sy = Sy + (y[i+1] - y[i]) * (x[i+1]**2 + x[i]*y[i+1]+ x[i]**2) #Moment of area y
-    Ix = Ix + (x[i+1] - x[i]) * (y[i+1]**3 + y[i]**2*y[i+1] + y[i+1]**2*y[i]+ y[i]**3) #Moment of inertia x
-    Iy = Iy + (y[i+1] - y[i]) * (x[i+1]**3 + x[i]**2*y[i+1]+ x[i]*y[i+1]**2 + x[i]**3) #Moment of inertia y
+    Ax = Ax + (x[i+1] + x[i]) * (y[i+1] - y[i])  
+    Sx = Sx + (x[i+1] - x[i]) * (y[i+1]**2 + y[i]*y[i+1]+ y[i]**2)  
+    Sy = Sy + (y[i+1] - y[i]) * (x[i+1]**2 + x[i]*y[i+1]+ x[i]**2)  
+    Ix = Ix + (x[i+1] - x[i]) * (y[i+1]**3 + y[i]**2*y[i+1] + y[i+1]**2*y[i]+ y[i]**3)  
+    Iy = Iy + (y[i+1] - y[i]) * (x[i+1]**3 + x[i]**2*y[i+1]+ x[i]*y[i+1]**2 + x[i]**3)  
     Ixy = Ixy + (y[i+1] - y[i]) * (y[i+1]*(3*x[i+1]**2 + 2*x[i]*x[i]+x[i]**2) + y[i]*(3*x[i]**2 + 2*x[i+1]*x[i] + x[i+1]**2))
 
 #Finalise calculations    
